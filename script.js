@@ -4,7 +4,7 @@ var allowedCharacters = [""]
 var passLength = ""
 var somethingAdded = false
 var checksCompleted = false
-var validLength = ""
+var validLength;
 var allGood = true
 
 function specialCharacters() {
@@ -50,11 +50,11 @@ function passwordLength() {
 
 function generatePassword() {
   passwordLength();
-  if(validLength = false) {
-    alert("You must choose a number between 8 and 128. Try again");
+  if(validLength == false) {
     allGood = false;
     return
   } else {
+    allGood = true;
   allowUppercase();
   allowLowercase();
   allowNumbers();
@@ -66,10 +66,11 @@ function generatePassword() {
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
-  if(allGood = false) {
+  if(allGood == false) {
     alert("You must choose a number between 8 and 128. Try again");
     password = "Please try again!";
-  } else if (allGood == true && somethingAdded == false) {
+  } else if (somethingAdded == false) {
+    alert("You must select at least one character type");
     password = "You must select at least one character type"
   } else {
     //do nothing
