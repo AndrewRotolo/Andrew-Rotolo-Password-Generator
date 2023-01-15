@@ -1,4 +1,5 @@
 # Andrew Rotolo's Random Password Generator
+![image](https://user-images.githubusercontent.com/119925857/212526741-2c0dd94d-9384-4144-b5bf-0ed9a116c41d.png)
 
 ## Description
 
@@ -7,6 +8,8 @@ The random password generator creates a random string of characters with a lengt
 ## Installation
 
 No installation necessary. If running the application locally, simply run index.html in the web browser of your choice.
+
+Application can be found at https://andrewrotolo.github.io/Andrew-Rotolo-Password-Generator/
 
 ## Usage
 
