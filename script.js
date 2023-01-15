@@ -6,6 +6,7 @@ var somethingAdded = false
 var checksCompleted = false
 var validLength;
 var allGood = true
+var charList;
 
 function specialCharacters() {
   if (window.confirm("Special characters?")) {
@@ -59,8 +60,16 @@ function generatePassword() {
   allowLowercase();
   allowNumbers();
   specialCharacters();
-  return;
+  
+  var functionResult = '';
+  let charList = allowedCharacters.join("");
+  // console.log(charList); - Used this for testing, don't want to delete it just in case I want to play with the code some more.
+  for (var i = 0; i < passLength; i++) {
+    var rnum = Math.floor(Math.random() * charList.length);
+    functionResult += charList.substring(rnum, rnum+1);
   }
+  }
+  return functionResult;
 }
 
 // Write password to the #password input
@@ -78,6 +87,9 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
+
+  //resets the array, allowing the program to work multiple times without requiring a refresh
+  allowedCharacters = [""];
 }
 
 // Add event listener to generate button
